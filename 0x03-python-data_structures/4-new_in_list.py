@@ -2,6 +2,7 @@
 def new_in_list(my_list, idx, element):
     resu = my_list[:]
     if (idx < 0) or idx >= len(my_list):
-        return res
+        return resu
     else:
-        res[idx] = element
+        resu[idx] = element
+        return resu
