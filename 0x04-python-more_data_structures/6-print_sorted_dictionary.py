@@ -13,4 +13,4 @@ def print_sorted_dictionary(a_dictionary):
     the result of the operation (&)
     """
     
-    return(sorted(a_dictionary.keys()))
+    [print("{}: {}".format(k, a_dictionary[k])) for k in sorted(a_dictionary)]
