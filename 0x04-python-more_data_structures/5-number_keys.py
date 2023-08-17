@@ -1,2 +1,1 @@
-
-ooileoo,
+#!/usr/bin/python3
