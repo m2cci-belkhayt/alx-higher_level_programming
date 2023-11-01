@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-""" Create a rectangle class """
+"""This class represents a rectangle with getters and setters for width and height.
+
+    Attributes:
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
+    """
 
 
 class Rectangle:
-    """ rectangle with getters and setters"""
+    """ rectangle object with getters and setters"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
