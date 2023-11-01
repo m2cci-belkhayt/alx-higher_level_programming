@@ -1,26 +1,26 @@
 #!/usr/bin/python3
-Rectangle = __import__('4-rectangle').Rectangle
+Rectangle = __import__('7-rectangle').Rectangle
 
-my_rectangle = Rectangle(2, 4)
-print(str(my_rectangle))
+my_rectangle_1 = Rectangle(8, 4)
+print(my_rectangle_1)
 print("--")
-print(my_rectangle)
-print("--")
-print(repr(my_rectangle))
-print("--")
-print(hex(id(my_rectangle)))
+my_rectangle_1.print_symbol = "&"
+print(my_rectangle_1)
 print("--")
 
-# create new instance based on representation
-new_rectangle = eval(repr(my_rectangle))
-print(str(new_rectangle))
+my_rectangle_2 = Rectangle(2, 1)
+print(my_rectangle_2)
 print("--")
-print(new_rectangle)
-print("--")
-print(repr(new_rectangle))
-print("--")
-print(hex(id(new_rectangle)))
+Rectangle.print_symbol = "C"
+print(my_rectangle_2)
 print("--")
 
-print(new_rectangle is my_rectangle)
-print(type(new_rectangle) is type(my_rectangle))
+my_rectangle_3 = Rectangle(7, 3)
+print(my_rectangle_3)
+
+print("--")
+
+my_rectangle_3.print_symbol = ["C", "is", "fun!"]
+print(my_rectangle_3)
+
+print("--")
