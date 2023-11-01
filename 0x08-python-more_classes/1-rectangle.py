@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This class represents a rectangle with getters and setters for width and height.
+"""This class represents a rectangle with getters and setters.
 
     Attributes:
         width (int): The width of the rectangle.
