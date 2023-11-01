@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    "rectangle"
+    """rectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -25,7 +25,7 @@ class Rectangle:
         return self.__height
 
     @height.setter
-    def width(self, value):
+    def height(self, value):
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
         elif value < 0:
