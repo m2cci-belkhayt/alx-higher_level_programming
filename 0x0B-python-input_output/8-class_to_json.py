@@ -1,6 +1,6 @@
 def class_to_json(obj):
     """
-    Serialize an object into a dictionary with simple data structures 
+    Serialize an object into a dictionary with simple data structures
     for JSON serialization.
 
     Parameters:
