@@ -10,7 +10,7 @@
 
 def write_file(filename="", text=""):
     """
-        Write in the text file or creat it if it 
+        Write in the text file or creat it if it
         doesnt exist
     """
     with open(filename, 'w', encoding="utf-8") as f:
