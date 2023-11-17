@@ -38,7 +38,11 @@ if __name__ == "__main__":
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
     
-    def update(self, *args):
-        attributes = ["id", "width", "height", "x", "y"]
-        for attr, value in zip(attributes, args):
-            setattr(self, attr, value)
+    def update(self, *args, **kwargs):
+        if args:
+            attributes = ["id", "width", "height", "x", "y"]
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
