@@ -37,3 +37,8 @@ if __name__ == "__main__":
     
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+    
+    def update(self, *args):
+        attributes = ["id", "width", "height", "x", "y"]
+        for attr, value in zip(attributes, args):
+            setattr(self, attr, value)
