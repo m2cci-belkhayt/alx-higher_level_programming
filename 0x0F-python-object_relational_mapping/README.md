@@ -1,4 +1,4 @@
-# Project README
+# Project python-ORM
 
 ## Before You Start
 Please make sure your MySQL server is in version 8.0. You can find instructions on how to install MySQL 8.0 on Ubuntu 20.04.
