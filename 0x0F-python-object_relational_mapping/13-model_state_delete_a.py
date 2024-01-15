@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-# Deletes all State objects with a name containing the letter 'a'
-# from the MySQL database hbtn_0e_6_usa.
-# Usage: ./13-model_state_delete_a.py <mysql username> <mysql password> <database name>
+"""
+Deletes all State objects with a name containing the letter 'a'
+from the MySQL database hbtn_0e_6_usa.
+Usage: ./13-model_state_delete_a.py <mysql_username> <mysql_password> <database_name>
+"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
