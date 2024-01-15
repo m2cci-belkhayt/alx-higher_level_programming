@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-# Prints the State object with the specified name from the MySQL database hbtn_0e_6_usa.
-# Usage: ./10-model_state_my_get.py <mysql username> <mysql password> <database name> <state name>
+"""
+Prints the State object with the specified name from the MySQL database hbtn_0e_6_usa.
+Usage: ./10-model_state_my_get.py <mysql_username> <mysql_password> <database_name> <state_name>
+"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
