@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-# Changes the name of a State object in the MySQL database hbtn_0e_6_usa.
-# Usage: ./12-model_state_update_id_2.py <mysql username> <mysql password> <database name>
+"""
+Changes the name of a State object in the MySQL database hbtn_0e_6_usa.
+Usage: ./12-model_state_update_id_2.py <mysql_username> <mysql_password> <database_name>
+"""
+
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
