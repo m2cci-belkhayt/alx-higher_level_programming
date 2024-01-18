@@ -6,12 +6,15 @@ Script that lists all cities from the database hbtn_0e_4_usa.
 import sys
 import MySQLdb
 
+
 def list_cities(username, password, database):
     """
     Lists all cities from the database hbtn_0e_4_usa.
     """
     try:
-        db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+        db = MySQLdb.connect(host="localhost",
+                             port=3306, user=username,
+                             passwd=password, db=database)
         cursor = db.cursor()
 
         # Execute a single query to fetch the required data
@@ -32,6 +35,7 @@ def list_cities(username, password, database):
     finally:
         if db:
             db.close()
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
