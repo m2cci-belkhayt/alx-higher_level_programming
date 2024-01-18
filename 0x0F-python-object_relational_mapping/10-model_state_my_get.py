@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-Prints the State object with the specified name from the MySQL database hbtn_0e_6_usa.
-Usage: ./10-model_state_my_get.py <mysql_username> <mysql_password> <database_name> <state_name>
+Prints the State object with the specified
+name from the MySQL database hbtn_0e_6_usa.
+Usage: ./10-model_state_my_get.py <mysql_username>
+<mysql_password> <database_name> <state_name>
 """
 
 import sys
@@ -12,7 +14,8 @@ from model_state import Base, State
 if __name__ == "__main__":
     # Check the number of arguments
     if len(sys.argv) != 5:
-        print("Usage: {} <mysql_username> <mysql_password> <database_name> <state_name>".format(sys.argv[0]))
+        print("Usage: {} <mysql_username> <mysql_password>"
+              "<database_name> <state_name>".format(sys.argv[0]))
         sys.exit(1)
 
     # Set up the connection to the MySQL server
