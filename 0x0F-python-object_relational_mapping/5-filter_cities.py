@@ -1,19 +1,43 @@
 #!/usr/bin/python3
-# Displays all cities of a given state from the
-# states table of the database hbtn_0e_4_usa.
-# Safe from SQL injections.
-# Usage: ./5-filter_cities.py <mysql username> \
-#                             <mysql password> \
-#                             <database name> \
-#                             <state name searched>
+"""
+Script that takes in the name of a state as an argument
+and lists all cities of that state, using the database hbtn_0e_4_usa
+"""
+
 import sys
 import MySQLdb
 
+
+def list_cities(username, password, database, state_name):
+    """
+    Lists all cities of a given state from the database hbtn_0e_4_usa
+    """
+    try:
+        db = MySQLdb.connect(host="localhost",
+                             port=3306, user=username,
+                             passwd=password, db=database)
+        cursor = db.cursor()
+
+        query = (
+            "SELECT cities.id, cities.name, states.name "
+            "FROM cities "
+            "JOIN states ON cities.state_id = states.id "
+            "WHERE states.name = %s "
+            "ORDER BY cities.id ASC"
+        )
+
+        cursor.execute(query, (state_name,))
+        cities = cursor.fetchall()
+
+        for city in cities:
+            print(city)
+    except MySQLdb.Error as e:
+        print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
+    finally:
+        if db:
+            db.close()
+
+
 if __name__ == "__main__":
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    c = db.cursor()
-    c.execute("SELECT * FROM `cities` as `c` \
-                INNER JOIN `states` as `s` \
-                   ON `c`.`state_id` = `s`.`id` \
-                ORDER BY `c`.`id`")
-    print(", ".join([ct[2] for ct in c.fetchall() if ct[4] == sys.argv[4]]))
+    if len(sys.argv) == 5:
+        list_cities(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
