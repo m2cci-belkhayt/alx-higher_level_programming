@@ -1,19 +1,27 @@
 #!/usr/bin/python3
 """
-Script that lists all states with a name starting with N from the database hbtn_0e_0_usa
+Script that lists all states with a name
+starting with N from the database hbtn_0e_0_usa
 """
 
 import sys
 import MySQLdb
 
+
 def list_states_N(username, password, database):
     """
-    Lists all states with a name starting with N from the database hbtn_0e_0_usa
+    Lists all states with a name starting
+    with N from the database hbtn_0e_0_usa
     """
     try:
-        db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+        db = MySQLdb.connect(host="localhost",
+                             port=3306, user=username,
+                             passwd=password, db=database)
         cursor = db.cursor()
-        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        cursor.execute("SELECT * FROM states "
+                       "WHERE name LIKE 'N%' "
+                       "ORDER BY id ASC")
+
         states = cursor.fetchall()
         for state in states:
             print(state)
@@ -22,6 +30,7 @@ def list_states_N(username, password, database):
     finally:
         if db:
             db.close()
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 4:
