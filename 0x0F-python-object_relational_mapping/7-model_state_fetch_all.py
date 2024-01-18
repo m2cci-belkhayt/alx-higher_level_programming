@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Script to list all State objects from the hbtn_0e_6_usa database.
-Usage: ./7-model_state_fetch_all.py <mysql username> <mysql password> <database name>
+Usage: ./7-model_state_fetch_all.py <mysql username>
+        <mysql password> <database name>
 """
 
 import sys
