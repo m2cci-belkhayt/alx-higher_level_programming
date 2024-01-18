@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 Script to print the first State object from the hbtn_0e_6_usa database.
-Usage: ./8-model_state_fetch_first.py <mysql username> <mysql password> <database name>
+Usage: ./8-model_state_fetch_first.py
+<mysql username> <mysql password> <database name>
 """
 
 import sys
@@ -24,4 +25,4 @@ if __name__ == "__main__":
     if state is None:
         print("Nothing")  # If no State object is found, print "Nothing"
     else:
-        print("{}: {}".format(state.id, state.name))  # Print the details of the first State object
+        print("{}: {}".format(state.id, state.name))
