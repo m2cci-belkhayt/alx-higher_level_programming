@@ -19,7 +19,7 @@ def list_states_N(username, password, database):
                              passwd=password, db=database)
         cursor = db.cursor()
         cursor.execute("SELECT * FROM states "
-                       "WHERE name LIKE 'N%' COLLATE utf8_general_ci "
+                       "WHERE name LIKE 'N%' "
                        "ORDER BY id ASC")
 
         states = cursor.fetchall()
