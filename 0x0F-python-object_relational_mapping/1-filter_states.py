@@ -21,10 +21,7 @@ def list_states_N(username, password, database):
         cursor.execute("SELECT * FROM states "
                        "WHERE name LIKE 'N%' "
                        "ORDER BY id ASC")
-
-        states = cursor.fetchall()
-        for state in states:
-            print(state)
+        [print(state) for state in cursor.fetchall() if state[1][0] == "N"]
     except MySQLdb.Error as e:
         print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
     finally:
