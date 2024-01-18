@@ -17,16 +17,11 @@ def search_states(username, password, database, state_name):
                              port=3306, user=username,
                              passwd=password, db=database)
         cursor = db.cursor()
-        query = (
-            "SELECT * FROM states "
-            "WHERE name = '{}' COLLATE utf8_general_ci "
-            "ORDER BY id ASC".format(state_name)
-            )
-
+        cursor.execute("SELECT * \
+                 FROM `states` \
+                WHERE BINARY `name` = '{}'".format(sys.argv[4]))
+        [print(state) for state in c.fetchall()]
         cursor.execute(query)
-        states = cursor.fetchall()
-        for state in states:
-            print(state)
     except MySQLdb.Error as e:
         print("MySQL Error {}: {}".format(e.args[0], e.args[1]))
     finally:
